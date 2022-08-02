@@ -9,11 +9,13 @@ namespace UserRegistration
 {
     public class Patterns
     {
-        public static string firstname = "^[A-Z][a-z]{3,}";
-        public static string lastname = "^[A-Z][a-z]{3,}";
-        public bool Validation(string sample)
+        public static string email = "^[a-zA-Z0-9]+([!@#$%^&*()_+.,][a-zA-Z0-9]+)*[@][a-zA-Z]{2,}[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
+        public void Validation(string sample)
         {
-            return Regex.IsMatch(sample, firstname);
+            if(Regex.IsMatch(sample, email))
+                Console.WriteLine("Valid email address");
+            else
+                Console.WriteLine("Invalid email address");
         }
     }
 }
